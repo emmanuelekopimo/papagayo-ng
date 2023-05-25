@@ -292,18 +292,7 @@ class LipsyncFrame:
         self.main_window.action_allo_download.triggered.connect(lambda: self.start_download(self.download_allosaurus_model))
         self.main_window.action_rhubarb_download.triggered.connect(lambda: self.start_download(self.download_rhubarb))
         self.main_window.action_ffmpeg_download.triggered.connect(lambda: self.start_download(self.download_ffmpeg))
-        if not utilities.ffmpeg_binaries_exists():
-            self.ffmpeg_action = QtWidgets.QAction("Download FFmpeg")
-            self.ffmpeg_action.triggered.connect(lambda: self.start_download(self.download_ffmpeg))
-            self.main_window.menubar.addAction(self.ffmpeg_action)
-        if not utilities.allosaurus_model_exists():
-            self.model_action = QtWidgets.QAction("Download AI Model")
-            self.model_action.triggered.connect(lambda: self.start_download(self.download_allosaurus_model))
-            self.main_window.menubar.addAction(self.model_action)
-        if not utilities.rhubarb_binaries_exists():
-            self.rhubarb_action = QtWidgets.QAction("Download Rhubarb")
-            self.rhubarb_action.triggered.connect(lambda: self.start_download(self.download_rhubarb))
-            self.main_window.menubar.addAction(self.rhubarb_action)
+        
         self.change_stylesheet()
         self.cur_frame = 0
         self.timer = None
